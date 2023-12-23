@@ -30,7 +30,7 @@ const HEIGHT = 375*1.5
 // Define the IMAGES constant
 const IMAGES: ImageData[] = [
     {
-        src: '/images/1970-honda-n600-off-road.JPG',
+        src: 'https://i.imgur.com/aAgBAvf.jpg',
         alt: '1970 Honda N600 Off Road',
         tags: {
             manufacturer: 'honda',
