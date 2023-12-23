@@ -33,8 +33,8 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/Nqfm3TF.jpg',
         alt: '1970 Honda N600 Off Road',
         tags: {
-            manufacturer: 'honda',
-            modelName: 'n600',
+            manufacturer: 'Honda',
+            modelName: 'N600',
             modelYear: 1970,
             color: 'white',
             other: ['off-road']
@@ -44,8 +44,8 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/5dwiHuj.jpg',
         alt: '1984 Toyota MR2',
         tags: {
-            manufacturer: 'toyota',
-            modelName: 'mr2',
+            manufacturer: 'Toyota',
+            modelName: 'MR2',
             modelYear: 1984,
             color: 'blue'
         }
@@ -54,7 +54,7 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/rZcPkyK.jpg',
         alt: '1985 Porsche 911 Rally',
         tags: {
-            manufacturer: 'porsche',
+            manufacturer: 'Porsche',
             modelName: '911',
             modelYear: 1985,
             color: 'silver',
@@ -65,8 +65,8 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/EmarprK.jpg',
         alt: '2016 Nissan Sentra',
         tags: {
-            manufacturer: 'nissan',
-            modelName: 'sentra',
+            manufacturer: 'Nissan',
+            modelName: 'Sentra',
             modelYear: 2016,
             color: 'blue'
         }
@@ -75,8 +75,8 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/LYofijB.jpg',
         alt: '2018 Dodge Charger',
         tags: {
-            manufacturer: 'dodge',
-            modelName: 'charger',
+            manufacturer: 'Dodge',
+            modelName: 'Charger',
             modelYear: 2018,
             color: 'black'
         }
@@ -85,8 +85,8 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/HgWmS9B.jpg',
         alt: '2019 Volkswagen Beetle Convertible',
         tags: {
-            manufacturer: 'volkswagen',
-            modelName: 'beetle',
+            manufacturer: 'Volkswagen',
+            modelName: 'Beetle',
             modelYear: 2019,
             color: 'red',
             other: ['convertible']
@@ -96,8 +96,8 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/bntNPYo.jpg',
         alt: '1976 Volkswagen Golf GTI MK1',
         tags: {
-            manufacturer: 'volkswagen',
-            modelName: 'golf gti',
+            manufacturer: 'Volkswagen',
+            modelName: 'Golf GTI MK1',
             modelYear: 1976,
             color: 'green'
         }
@@ -106,8 +106,8 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/N7IJWxl.jpg',
         alt: 'Audi TT RS Coupe',
         tags: {
-            manufacturer: 'audi',
-            modelName: 'tt',
+            manufacturer: 'Audi',
+            modelName: 'TT RS',
             modelYear: 2019,
             color: 'green',
             other: ['coupe']
@@ -117,18 +117,18 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/k9Zay1q.jpg',
         alt: 'Ford Police Interceptor',
         tags: {
-            manufacturer: 'ford',
-            modelName: 'police interceptor',
+            manufacturer: 'Ford',
+            modelName: 'Police Interceptor',
             modelYear: 2019,
-            color: 'black'
+            color: 'silver'
         }
     },
     {
         src: 'https://i.imgur.com/gJndvas.jpg',
         alt: 'Holden VF Commodore SSV',
         tags: {
-            manufacturer: 'holden',
-            modelName: 'vf commodore',
+            manufacturer: 'Holden',
+            modelName: 'VF Commodore',
             modelYear: 2019,
             color: 'red'
         }
@@ -137,8 +137,8 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/DxjqQS9.jpg',
         alt: 'Ice Cream King',
         tags: {
-            manufacturer: 'fantasy',
-            modelName: 'ice cream king',
+            manufacturer: 'Matchbox',
+            modelName: 'Ice Cream King',
             color: 'pink'
         }
     },
@@ -146,8 +146,8 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/ITMXCub.jpg',
         alt: 'Mercedes-AMG SL 63',
         tags: {
-            manufacturer: 'mercedes',
-            modelName: 'amg sl',
+            manufacturer: 'Mercedes',
+            modelName: 'AMG SL 63',
             modelYear: 2019,
             color: 'blue'
         }
@@ -156,10 +156,10 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/EBsNI59.jpg',
         alt: 'Porsche 911 Carrera Cabriolet',
         tags: {
-            manufacturer: 'porsche',
+            manufacturer: 'Porsche',
             modelName: '911',
             modelYear: 2019,
-            color: 'red',
+            color: 'blue',
             other: ['cabriolet']
         }
     },
@@ -167,20 +167,20 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/8b4lDzs.jpg',
         alt: 'Porsche 918 Spyder',
         tags: {
-            manufacturer: 'porsche',
-            modelName: '918',
+            manufacturer: 'Porsche',
+            modelName: '918 Spyder',
             modelYear: 2019,
-            color: 'silver'
+            color: 'yellow'
         }
     },
     {
         src: 'https://i.imgur.com/Q9Kzfv4.jpg',
         alt: 'Porsche Cayenne Turbo',
         tags: {
-            manufacturer: 'porsche',
-            modelName: 'cayenne',
+            manufacturer: 'Porsche',
+            modelName: 'Cayenne',
             modelYear: 2019,
-            color: 'black',
+            color: 'blue',
             other: ['turbo']
         }
     },
@@ -188,28 +188,28 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/Ie7JbT6.jpg',
         alt: 'Tesla Model X',
         tags: {
-            manufacturer: 'tesla',
-            modelName: 'model x',
+            manufacturer: 'Tesla',
+            modelName: 'Model X',
             modelYear: 2019,
-            color: 'white'
+            color: 'silver'
         }
     },
     {
         src: 'https://i.imgur.com/8cbCft9.jpg',
         alt: 'Tesla Roadster',
         tags: {
-            manufacturer: 'tesla',
-            modelName: 'roadster',
+            manufacturer: 'Tesla',
+            modelName: 'Roadster',
             modelYear: 2019,
-            color: 'red'
+            color: 'silver'
         }
     },
     {
         src: 'https://i.imgur.com/0TpFb1V.jpg',
         alt: '2020 Land Rover Defender 90',
         tags: {
-            manufacturer: 'land rover',
-            modelName: 'defender',
+            manufacturer: 'Land Rover',
+            modelName: 'Defender 90',
             modelYear: 2020,
             color: 'brown'
         }
@@ -218,8 +218,8 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/fN48sya.jpg',
         alt: '1994 Mitsubishi 3000GT',
         tags: {
-            manufacturer: 'mitsubishi',
-            modelName: '3000gt',
+            manufacturer: 'Mitsubishi',
+            modelName: '3000GT',
             modelYear: 1994,
             color: 'red'
         }
@@ -228,8 +228,8 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/YtpQY8T.jpg',
         alt: '\'16 Chevy Camaro Convertible',
         tags: {
-            manufacturer: 'chevrolet',
-            modelName: 'camaro',
+            manufacturer: 'Chevrolet',
+            modelName: 'Camaro',
             modelYear: 2016,
             color: 'yellow',
             other: ['convertible']
@@ -239,8 +239,8 @@ const IMAGES: ImageData[] = [
         src: 'https://i.imgur.com/f3ieV9J.jpg',
         alt: '1992 Mazda Autozam AZ-1',
         tags: {
-            manufacturer: 'mazda',
-            modelName: 'autozam az-1',
+            manufacturer: 'Mazda',
+            modelName: 'Autozam AZ-1',
             modelYear: 1992,
             color: 'blue'
         }
