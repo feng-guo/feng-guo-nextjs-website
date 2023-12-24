@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import NavigationBar from '../components/NavigationBar'
 
-import { ImageData, IMAGES } from '../components/imageData'
+import { ImageData, HOTWHEELS, IMAGES } from '../components/imageData'
 
 // HotWheelsProps type
 type HotWheelsProps = {
@@ -85,8 +85,8 @@ const ImagesContainer: React.FC<HotWheelsProps> = ({ images }) => (
     </div>
 )
 
-const searchImages = (searchTerm: string) => {
-    return IMAGES.filter(image => {
+const searchImages = (searchTerm: string, images: Array<ImageData>) => {
+    return images.filter(image => {
         if (image.alt.toLowerCase().includes(searchTerm.toLowerCase())) {
             return true
         }
@@ -111,13 +111,18 @@ const searchImages = (searchTerm: string) => {
 
 const HotWheels: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('')
+    const [useHotWheels, setUseHotWheels] = useState(true)
 
-    const filteredImages = searchImages(searchTerm)
+    const images = useHotWheels ? HOTWHEELS : IMAGES
+    const filteredImages = searchImages(searchTerm, images)
     
     return (
         <div>
             <NavigationBar />
             <h1>Hot Wheels</h1>
+            <button onClick={() => setUseHotWheels(!useHotWheels)}>
+                Toggle Images
+            </button>
             <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
             <ImagesContainer images={filteredImages} />
         </div>
