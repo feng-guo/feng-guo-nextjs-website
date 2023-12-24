@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import NavigationBar from '../components/NavigationBar'
 
-import { ImageData, IMAGES } from './imageData'
+import { ImageData, IMAGES } from '../components/imageData'
 
 // HotWheelsProps type
 type HotWheelsProps = {
