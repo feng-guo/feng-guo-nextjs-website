@@ -1,13 +1,14 @@
 // pages/hot-wheels.tsx
-import React, { useRef, useState } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import Image from 'next/image'
 import NavigationBar from '../components/NavigationBar'
 
-import { ImageData, HOTWHEELS, IMAGES } from '../components/imageData'
+import { extractDataFromImage } from '../components/imageProcessing'
+import { CollectedItemData, HOTWHEELS, IMAGES } from '../components/imageData'
 
 // HotWheelsProps type
 type HotWheelsProps = {
-    images: ImageData[]
+    images: CollectedItemData[]
 }
 
 //Original 4000x6000
@@ -15,7 +16,7 @@ const WIDTH = 250*1.5
 const HEIGHT = 375*1.5
 
 type ImageWithInfoProps = {
-    image: ImageData,
+    image: CollectedItemData,
     width: number,
     height: number
 }
@@ -85,7 +86,7 @@ const ImagesContainer: React.FC<HotWheelsProps> = ({ images }) => (
     </div>
 )
 
-const searchImages = (searchTerm: string, images: Array<ImageData>) => {
+const searchImages = (searchTerm: string, images: Array<CollectedItemData>) => {
     return images.filter(image => {
         if (image.alt.toLowerCase().includes(searchTerm.toLowerCase())) {
             return true
@@ -110,23 +111,41 @@ const searchImages = (searchTerm: string, images: Array<ImageData>) => {
 }
 
 const HotWheels: React.FC = () => {
-    const [searchTerm, setSearchTerm] = useState('')
-    const [useHotWheels, setUseHotWheels] = useState(true)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [useHotWheels, setUseHotWheels] = useState(true)
+  const [imageUrl, setImageUrl] = useState('')
+  const [images, setImages] = useState(useHotWheels ? HOTWHEELS : IMAGES)
 
-    const images = useHotWheels ? HOTWHEELS : IMAGES
-    const filteredImages = searchImages(searchTerm, images)
-    
-    return (
-        <div>
-            <NavigationBar />
-            <h1>Hot Wheels</h1>
-            <button onClick={() => setUseHotWheels(!useHotWheels)}>
-                Toggle Images
-            </button>
-            <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
-            <ImagesContainer images={filteredImages} />
-        </div>
-    )
+  useEffect(() => {
+      setImages(useHotWheels ? HOTWHEELS : IMAGES)
+  }, [useHotWheels])
+
+  const filteredImages = searchImages(searchTerm, images)
+
+  const handleSubmit = async (event: React.FormEvent) => {
+      event.preventDefault()
+      const data = await extractDataFromImage(imageUrl)
+      console.log(data)
+      if (data.src && data.alt) {
+          setImages(prevImages => [...prevImages, data])
+      }
+  }
+
+  return (
+      <div>
+          <NavigationBar />
+          <h1>Hot Wheels</h1>
+          <button onClick={() => setUseHotWheels(!useHotWheels)}>
+              Toggle Images
+          </button>
+          <form onSubmit={handleSubmit}>
+              <input type="text" value={imageUrl} onChange={e => setImageUrl(e.target.value)} placeholder="Image URL" />
+              <button type="submit">Add Image</button>
+          </form>
+          <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} placeholder="Search" />
+          <ImagesContainer images={filteredImages} />
+      </div>
+  )
 }
 
 export default HotWheels

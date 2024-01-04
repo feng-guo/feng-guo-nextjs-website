@@ -1,5 +1,5 @@
 // ImageData type
-export type ImageData = {
+export type CollectedItemData = {
     src: string,
     alt: string,
     tags?: { 
@@ -15,7 +15,7 @@ export type ImageData = {
 }
 
 // Define the IMAGES constant
-export const IMAGES: ImageData[] = [
+export const IMAGES: CollectedItemData[] = [
     {
         src: 'https://i.imgur.com/Nqfm3TF.jpg',
         alt: '1970 Honda N600 Off Road',
@@ -282,7 +282,7 @@ export const IMAGES: ImageData[] = [
     }
 ]
 
-export const HOTWHEELS: ImageData[] = [
+export const HOTWHEELS: CollectedItemData[] = [
     {
         src: 'https://i.imgur.com/vBi6XCq.jpg',
         alt: 'Jeep Scrambler',

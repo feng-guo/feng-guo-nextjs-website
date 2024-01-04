@@ -8,11 +8,16 @@
     "export": "next export"
   },
   "dependencies": {
+    "@tensorflow-models/coco-ssd": "^2.2.3",
+    "@tensorflow/tfjs": "^4.15.0",
+    "axios": "^1.6.2",
+    "browser-image-manipulation": "^0.4.0",
     "cypress": "^13.4.0",
     "next": "^14.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.0"
+    "react-router-dom": "^6.21.0",
+    "tesseract.js": "^5.0.4"
   },
   "devDependencies": {
     "@types/node": "^20.10.5",
