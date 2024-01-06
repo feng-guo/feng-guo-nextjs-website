@@ -9,13 +9,14 @@ export type ImageData = {
         modelYear?: number,
         color?: string,
         series?: string,
-        carPosition?: number,
+        seriesPosition?: string,
+        yearPosition?: string,
         other?: string[]
     }
 }
 
 // Define the IMAGES constant
-export const IMAGES: ImageData[] = [
+export const MATCHBOX: ImageData[] = [
     {
         src: 'https://i.imgur.com/Nqfm3TF.jpg',
         alt: '1970 Honda N600 Off Road',
@@ -1422,3 +1423,13 @@ export const HOTWHEELS: ImageData[] = [
         }
     },
 ]
+
+export const CARS_2024: ImageData[] = require('./cars_2024.json')
+
+export const CARS_2023: ImageData[] = require('./cars.json')
+
+export const CARS_2022: ImageData[] = require('./cars_2022.json')
+
+export const CARS_TEST: ImageData[] = require('./test_cars.json')
+
+export const ALL: ImageData[] = [...MATCHBOX, ...HOTWHEELS, ...CARS_2023, ...CARS_2022, ...CARS_2024, ...CARS_TEST]
