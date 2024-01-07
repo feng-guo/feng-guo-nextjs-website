@@ -1426,7 +1426,7 @@ export const HOTWHEELS: ImageData[] = [
 
 export const CARS_2024: ImageData[] = require('./cars_2024.json')
 
-export const CARS_2023: ImageData[] = require('./cars.json')
+export const CARS_2023: ImageData[] = require('./cars_2023.json')
 
 export const CARS_2022: ImageData[] = require('./cars_2022.json')
 
