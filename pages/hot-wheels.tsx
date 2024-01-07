@@ -135,7 +135,7 @@ const HotWheels: React.FC = () => {
       event.preventDefault()
 
       try {
-        const response = await axios.post('http://api.kolikoli.me/process_image', {
+        const response = await axios.post('https://api.kolikoli.me/process_image', {
           url: imageUrl,
         })
 
