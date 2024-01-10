@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.logo {
-  height: 3em;
-  margin: 5px;
+.icon {
+  width: 24px;
+  height: 24px;
 }

@@ -1,7 +1,5 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -10,13 +8,119 @@ body {
   box-sizing: border-box;
 }
 
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 main {
-  padding: 5rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  width: 100vw;
+  padding: 0 1rem;
+}
+
+section {
+  padding-top: 55px; /* Adjust this value to match the height of your navigation bar */
+  margin-top: -55px; /* This should be the negative value of the padding */
+}
+
+.about-me-col {
+  max-width: 60vw; /* Adjust this value to your liking */
+  margin: auto; /* This will center the column if it's narrower than its container */
+}
+
+/* For the skills section */
+.skill-card {
+  width: 100%; /* This will make the card take up the full width of its parent container */
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  flex-grow: 1;
+}
+
+.skill-card .card-body {
+  padding: 1.5rem;
+}
+
+.skill-card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.skill-items {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.skill-col {
+  display: flex;
+}
+
+.skills-container {
+  max-width: 80vw; /* Adjust this value to your liking */
+  margin: auto; /* This will center the container if it's narrower than its viewport */
+}
+
+/* For the project section */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* This will create 3 columns */
+  gap: 1rem;
+}
+
+.project-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  height: 100%; /* This will make each item take up the full height of its container */
+  display: flex; /* This will make the contents of the card a flex container */
+  flex-direction: column; /* This will make the contents of the card stack vertically */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  flex-grow: 1;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.project-card .card-body {
+  flex-grow: 1; /* This will make the card body take up any remaining space in the card */
+}
+
+.project-col {
+  display: flex;
+  margin-bottom: 1rem; /* This will add some space below each column */
+}
+
+.job-row {
+  margin-bottom: 1rem;
+}
+
+.job-card {
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.education-card {
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 code {
@@ -27,30 +131,12 @@ code {
 }
 
 .container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 100vw;
 }
-
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-/* .image-info {
-  position: 'absolute';
-  top: 0;
-  left: 250*1.5;
-  width: 250*1.5;
-  height: 375*1.5;
-  background-color: 'white';
-  border: '1px solid black';
-  padding: '10px';
-  overflow: 'auto';
-} */
 
 .image-info {
   position: absolute;
@@ -71,11 +157,3 @@ nav {
 .image-info.left {
   right: 100%;
 }
-
-/* @media (min-width: 768px) {
-  .image-info {
-    left: auto;
-    right: 100%;
-    transform: translateX(100%);
-  }
-} */
