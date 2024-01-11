@@ -120,6 +120,7 @@ const Home: React.FC = () => {
     {
       title: 'Full-Stack Software Engineer Co-op',
       company: 'Top Hat Monocle',
+      imageLink: 'https://tophat.com/wp-content/uploads/2017/05/tophat.png',
       period: 'Sep 2023 – Dec 2023',
       skills: 'Python, Django, Docker, React, Redux, JavaScript, MySQL, PostgreSQL, ChatGPT API',
       responsibilities: [
@@ -130,6 +131,7 @@ const Home: React.FC = () => {
     {
       title: 'Cloud Software Engineer Co-op',
       company: 'Thomson Reuters',
+      imageLink: 'https://fiu-original.b-cdn.net/fontsinuse.com/use-images/51/51197/51197.png?filename=tr_vrt_r_rgb_pos.png',
       period: 'Jan 2023 – Apr 2023',
       skills: 'C#, .NET, Kubernetes, Docker, JavaScript, Microsoft Azure Suite, Microsoft, SQL, OData, NUnit, Postman, Datadog',
       responsibilities: [
@@ -140,6 +142,7 @@ const Home: React.FC = () => {
     {
       title: 'Full-Stack Software Engineer',
       company: 'Canada Startup Company (Startup)',
+      imageLink: 'https://media.licdn.com/dms/image/D560BAQGv7dY3Uw33gw/company-logo_200_200/0/1666645334846/canstartco_logo?e=2147483647&v=beta&t=FKeil9F949a3yJcqLPs2hbKvSYdzwmCXUpSLhIOgO9M',
       period: 'Jan 2022 – Apr 2022',
       skills: 'Java, Kotlin, Android Studio, React Native, Node.js, React, Amazon AWS, Kubernetes',
       responsibilities: [
@@ -151,6 +154,7 @@ const Home: React.FC = () => {
     {
       title: 'Full-Stack Software Engineer',
       company: 'Exponet Canada (Startup)',
+      imageLink: 'https://media.licdn.com/dms/image/C560BAQEVmOIdkOb9Ng/company-logo_200_200/0/1631388025382?e=2147483647&v=beta&t=VAXZv2pc9jiC_yeGy8BIyGmrI2bVczuODL9gYVuOtMc',
       period: 'May 2021 – Aug 2021',
       skills: 'Grails, Groovy, React/Redux, TypeScript, MongoDB, Amazon MWS API',
       responsibilities: [
@@ -162,7 +166,8 @@ const Home: React.FC = () => {
     },
     {
       title: 'Software Developer',
-      company: 'GlobalTrade Corporation',
+      company: 'GlobalTrade Corporation (acquired by Komgo)',
+      imageLink: 'https://media.licdn.com/dms/image/C4D0BAQH9Beer6nqrpg/company-logo_200_200/0/1630556717737/komgo_logo?e=2147483647&v=beta&t=t5rxVHrIUcMqjoN-IFBxoK6K0espFVp_xNgjP4QwDrM',
       period: 'Jan 2020 – May 2020',
       skills: 'Java, JavaScript, HTML/CSS, Oracle WebLogic, SQL, jQuery, AngularJS, Spring Framework',
       responsibilities: [
@@ -203,14 +208,13 @@ const Home: React.FC = () => {
         <title>Feng Guo</title>
         <link rel="icon" href="/you.png" />
       </Head>
-      <img src="https://i.imgur.com/0o2gtCN.jpg" alt="Kyoto" id="splash" style={{ maxHeight: '100vh', maxWidth: '100vw', paddingBottom: '25px' }} />
-      <div className="container">
+      <div style={{ overflow: 'hidden', maxHeight: '100vh', maxWidth: '100vw' }}>
+        <img src="https://i.imgur.com/0o2gtCN.jpg" alt="Kyoto" id="splash" style={{ maxHeight: '100vh', maxWidth: '100vw', paddingBottom: '50px' }} />
+      </div>
+      <div style={{ overflow: 'hidden', maxWidth: '100vw' }} className="container">
 
         <main>
-
-          {/* <img src="https://i.imgur.com/dbJKZzY.png" alt="Kyoto" style={{maxHeight: '100vh', maxWidth: '100vw'}} /> */}
-          {/* <img src="https://i.imgur.com/vMK56NV.jpg" alt="Monkey" style={{maxHeight: '100vh', maxWidth: '100vw'}} /> */}
-          <div className="container" style={{ paddingBottom: '25px' }}>
+          <div className="container" style={{ paddingBottom: '30px' }}>
             <Header title="Welcome to my website!" />
           </div>
 
@@ -276,7 +280,9 @@ const Home: React.FC = () => {
                 {projects.map((project, index) => (
                   <Col md={4} className="project-col" key={index}>
                     <Card className="project-card">
-                      <Card.Img variant="top" src={project.image} alt={`Project ${index + 1} screenshot`} />
+                      <div className="img-wrapper">
+                        <Card.Img variant="top" src={project.image} alt={`Project ${index + 1} screenshot`} />
+                      </div>
                       <Card.Body>
                         <Card.Title>{project.title}</Card.Title>
                         {project.description.map((paragraph, index) => (
@@ -304,18 +310,25 @@ const Home: React.FC = () => {
                 <Row className="job-row" key={index}>
                   <Card className="job-card">
                     <Card.Body>
-                      <Card.Title>{job.title}</Card.Title>
-                      <Card.Subtitle className="mb-2 text-muted">{job.company}</Card.Subtitle>
-                      <div>
-                        <strong>Period:</strong> {job.period}<br />
-                        <strong>Skills:</strong> {job.skills}<br />
-                        <strong>Responsibilities:</strong>
-                        <ul>
-                          {job.responsibilities.map((responsibility, i) => (
-                            <li key={i}>{responsibility}</li>
-                          ))}
-                        </ul>
-                      </div>
+                      <Row>
+                        <Col xs={4} md={2}>
+                          <img src={job.imageLink} alt={job.title} className="img-fluid" />
+                        </Col>
+                        <Col xs={8} md={10}>
+                          <Card.Title>{job.title}</Card.Title>
+                          <Card.Subtitle className="mb-2 text-muted">{job.company}</Card.Subtitle>
+                          <div>
+                            <strong>Period:</strong> {job.period}<br />
+                            <strong>Skills:</strong> {job.skills}<br />
+                            <strong>Responsibilities:</strong>
+                            <ul>
+                              {job.responsibilities.map((responsibility, i) => (
+                                <li key={i}>{responsibility}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        </Col>
+                      </Row>
                     </Card.Body>
                   </Card>
                 </Row>
@@ -351,7 +364,7 @@ const Home: React.FC = () => {
           </section>
 
           <section id="contact">
-            <div className="container">
+            <div className="container" style={{ paddingTop: '50px' }}>
               <h2>Contact</h2>
               <p>I'm always open to discussing job opportunities, collaborations, or just general inquiries. Feel free to reach out to me through any of the social media platforms linked in the footer, or send me an email directly at:</p>
               <p><a href="mailto:f35guo@uwaterloo.ca">f35guo@uwaterloo.ca</a></p>

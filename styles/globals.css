@@ -1,6 +1,5 @@
 html,
 body {
-  overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -75,15 +74,19 @@ section {
   gap: 1rem;
 }
 
-.project-card {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 1rem;
-  text-align: center;
-  height: 100%; /* This will make each item take up the full height of its container */
-  display: flex; /* This will make the contents of the card a flex container */
-  flex-direction: column; /* This will make the contents of the card stack vertically */
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+.project-card .img-wrapper {
+  width: 100%;
+  padding-bottom: 100%; /* This makes the height equal to the width */
+  position: relative;
+}
+
+.project-card .img-wrapper .card-img-top {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; /* Reset the top position */
+  left: 0; /* Reset the left position */
+  object-fit: cover; /* This makes the image cover the entire area of the wrapper */
 }
 
 .project-card img {
