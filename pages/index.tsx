@@ -163,7 +163,7 @@ const Home: React.FC = () => {
       company: 'Exponet Canada (Startup)',
       imageLink: 'https://media.licdn.com/dms/image/C560BAQEVmOIdkOb9Ng/company-logo_200_200/0/1631388025382?e=2147483647&v=beta&t=VAXZv2pc9jiC_yeGy8BIyGmrI2bVczuODL9gYVuOtMc',
       period: 'May 2021 – Aug 2021',
-      skills: 'Grails, Groovy, React/Redux, TypeScript, MongoDB, Amazon MWS API',
+      skills: 'Groovy, Grails, React, Redux, TypeScript, Flutter, MongoDB',
       responsibilities: [
         'Refactored the application system to automatically retrieve Amazon and eBay orders to eliminate manual workflows, reducing the error from human entry by 95%.',
         'Developed a framework to create automation rules for shipments to reduce order management time by 85%.',
@@ -259,36 +259,6 @@ const Home: React.FC = () => {
             </div>
           </section>
 
-          <section id="projects">
-            <div className="container">
-              <h2>Projects</h2>
-              <Row>
-                {projects.map((project, index) => (
-                  <Col md={4} className="project-col" key={index}>
-                    <Card className="project-card">
-                      <div className="img-wrapper">
-                        <Card.Img variant="top" src={project.image} alt={`Project ${index + 1} screenshot`} />
-                      </div>
-                      <Card.Body>
-                        <Card.Title>{project.title}</Card.Title>
-                        {project.description.map((paragraph, index) => (
-                          <Card.Text key={index}>{paragraph}</Card.Text>
-                        ))}
-                        {project.technologies.map((tech, index) => (
-                          <Card.Text key={index}>{tech}</Card.Text>
-                        ))}
-                        <Card.Text>{project.workedOn}</Card.Text>
-                        {project.links.map((link, index) => (
-                          <Card.Link href={link.href} key={index}>{link.text}</Card.Link>
-                        ))}
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                ))}
-              </Row>
-            </div>
-          </section>
-
           <section id="experience">
             <div className="container">
               <h2>Experience</h2>
@@ -319,6 +289,36 @@ const Home: React.FC = () => {
                   </Card>
                 </Row>
               ))}
+            </div>
+          </section>
+
+          <section id="projects">
+            <div className="container">
+              <h2>Projects</h2>
+              <Row>
+                {projects.map((project, index) => (
+                  <Col md={4} className="project-col" key={index}>
+                    <Card className="project-card">
+                      <div className="img-wrapper">
+                        <Card.Img variant="top" src={project.image} alt={`Project ${index + 1} screenshot`} />
+                      </div>
+                      <Card.Body>
+                        <Card.Title>{project.title}</Card.Title>
+                        {project.description.map((paragraph, index) => (
+                          <Card.Text key={index}>{paragraph}</Card.Text>
+                        ))}
+                        {project.technologies.map((tech, index) => (
+                          <Card.Text key={index}>{tech}</Card.Text>
+                        ))}
+                        <Card.Text>{project.workedOn}</Card.Text>
+                        {project.links.map((link, index) => (
+                          <Card.Link href={link.href} key={index}>{link.text}</Card.Link>
+                        ))}
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
             </div>
           </section>
 
