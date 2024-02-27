@@ -14,7 +14,7 @@ const NavigationBar: React.FC = () => {
                     <Nav.Link as={Link} href="/#projects">Projects</Nav.Link>
                     <Nav.Link as={Link} href="/#experience">Experience</Nav.Link>
                     <Nav.Link as={Link} href="/#education">Education</Nav.Link>
-                    <Nav.Link as={Link} href="/hot-wheels">Hot Wheels</Nav.Link>
+                    {/* <Nav.Link as={Link} href="/hot-wheels">Hot Wheels</Nav.Link> */}
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
